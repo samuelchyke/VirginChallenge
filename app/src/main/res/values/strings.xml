@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Virgin Money Developer Challenge</string>
+    <string name="title_home">People</string>
+    <string name="title_dashboard">Rooms</string>
+</resources>
