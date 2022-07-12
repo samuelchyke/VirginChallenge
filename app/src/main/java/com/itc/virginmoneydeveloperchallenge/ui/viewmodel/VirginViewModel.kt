@@ -24,7 +24,6 @@ class VirginViewModel @Inject constructor(
     val people: LiveData<UIState> get() = _people
 
     fun getRooms() {
-
         CoroutineScope(Dispatchers.IO).launch {
 
             try {
@@ -33,6 +32,7 @@ class VirginViewModel @Inject constructor(
                     response.body()?.let {
 
                         _rooms.postValue(UIState.SUCCESS(it))
+
                     } ?: throw Exception("Data Null")
                 } else {
                     throw Exception(response.errorBody()?.string())
@@ -42,23 +42,19 @@ class VirginViewModel @Inject constructor(
                 withContext(Dispatchers.Main) {
                     _rooms.postValue(UIState.ERROR(e))
                 }
-
             }
-            val response = virginRepository.getRooms()
         }
-
-
     }
 
     fun getPeople() {
-
         CoroutineScope(Dispatchers.IO).launch {
-
             try {
                 val response = virginRepository.getPeople()
                 if (response.isSuccessful) {
                     response.body()?.let {
-                        _people.postValue(UIState.SUCCESS2(it))
+
+                        _people.postValue(UIState.SUCCESS(it))
+
                     } ?: throw Exception("Data Null")
                 } else {
                     throw Exception(response.errorBody()?.string())
@@ -68,12 +64,8 @@ class VirginViewModel @Inject constructor(
                 withContext(Dispatchers.Main) {
                     _people.postValue(UIState.ERROR(e))
                 }
-
             }
-            val response = virginRepository.getPeople()
         }
-
-
     }
 
     public override fun onCleared() {

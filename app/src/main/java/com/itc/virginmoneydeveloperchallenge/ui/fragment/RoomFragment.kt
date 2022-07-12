@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.itc.virginmoneydeveloperchallenge.adapter.RoomAdapter
 import com.itc.virginmoneydeveloperchallenge.databinding.FragmentRoomsBinding
+import com.itc.virginmoneydeveloperchallenge.model.rooms.RoomsResponseItem
 import com.itc.virginmoneydeveloperchallenge.util.UIState
 
 class RoomFragment : BaseFragment() {
@@ -51,7 +52,7 @@ class RoomFragment : BaseFragment() {
                     // Update adapter
 //                    binding.jokesRecVw.visibility = View.VISIBLE
 
-                    roomAdapter.setRooms(state.response)
+                    roomAdapter.setRooms(state.response as MutableList<RoomsResponseItem>)
                 }
 
                 is UIState.ERROR -> {

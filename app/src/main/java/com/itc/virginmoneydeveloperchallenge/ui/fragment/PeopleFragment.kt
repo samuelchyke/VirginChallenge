@@ -7,15 +7,16 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.itc.virginmoneydeveloperchallenge.adapter.PeopleAdapter
 import com.itc.virginmoneydeveloperchallenge.databinding.FragmentPeopleBinding
+import com.itc.virginmoneydeveloperchallenge.model.people.PeopleResponseItem
 import com.itc.virginmoneydeveloperchallenge.util.UIState
 
 class PeopleFragment : BaseFragment() {
 
-    private val binding by lazy{
+    private val binding by lazy {
         FragmentPeopleBinding.inflate(layoutInflater)
     }
 
-    private val peopleAdapter by lazy{
+    private val peopleAdapter by lazy {
         PeopleAdapter()
     }
 
@@ -24,21 +25,21 @@ class PeopleFragment : BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         initRecyclerView()
         observeData()
         return binding.root
     }
 
-    private fun initRecyclerView(){
+    private fun initRecyclerView() {
         //Recycler View
         binding.peopleRecVw.apply {
-            this.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+            this.layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
             adapter = peopleAdapter
         }
     }
 
-    private fun observeData(){
+    private fun observeData() {
         virginViewModel.people.observe(viewLifecycleOwner) { state ->
 
             when (state) {
@@ -47,29 +48,26 @@ class PeopleFragment : BaseFragment() {
                     //Load Spinner
                 }
 
-                is UIState.SUCCESS2 -> {
+                is UIState.SUCCESS -> {
                     // Update adapter
-                    peopleAdapter.setPeople(state.response)
+                    peopleAdapter.setPeople(state.response as MutableList<PeopleResponseItem>)
                 }
 
                 is UIState.ERROR -> {
                     // Show error dialog
-                    showError(state.error.localizedMessage){
+                    showError(state.error.localizedMessage) {
                         virginViewModel.getPeople()
                     }
                 }
-
                 else -> {}
             }
-
-
         }
-
         virginViewModel.getPeople()
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
-        binding.let{
+        binding.let {
             null
         }
     }

@@ -28,7 +28,6 @@ class NetworkModule {
         }
 
     @Provides
-    @Singleton
     fun providesRetrofit(okHttpClient : OkHttpClient, gson: Gson): Retrofit =
         Retrofit.Builder()
             .baseUrl(BASE_URL)
@@ -45,9 +44,7 @@ class NetworkModule {
             .writeTimeout(30, TimeUnit.SECONDS)
             .build()
 
-
     @Provides
-    @Singleton
     fun provideVirginService(retrofit : Retrofit) : VirginServiceApi =
         retrofit.create(VirginServiceApi::class.java)
 

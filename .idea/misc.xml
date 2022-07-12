@@ -3,15 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Samuel/AndroidStudioProjects/VirginMoneyDeveloperChallenge/app/src/main/res/layout/activity_main.xml" value="0.15604395604395604" />
+        <entry key="..\:/Users/Samuel/AndroidStudioProjects/VirginMoneyDeveloperChallenge/app/src/main/res/layout/activity2.xml" value="0.1111111111111111" />
+        <entry key="..\:/Users/Samuel/AndroidStudioProjects/VirginMoneyDeveloperChallenge/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Samuel/AndroidStudioProjects/VirginMoneyDeveloperChallenge/app/src/main/res/layout/app_bar_main.xml" value="0.42552083333333335" />
+        <entry key="..\:/Users/Samuel/AndroidStudioProjects/VirginMoneyDeveloperChallenge/app/src/main/res/layout/content_main.xml" value="0.42552083333333335" />
+        <entry key="..\:/Users/Samuel/AndroidStudioProjects/VirginMoneyDeveloperChallenge/app/src/main/res/layout/drawer.xml" value="0.1" />
         <entry key="..\:/Users/Samuel/AndroidStudioProjects/VirginMoneyDeveloperChallenge/app/src/main/res/layout/fragment_dashboard.xml" value="0.42135416666666664" />
+        <entry key="..\:/Users/Samuel/AndroidStudioProjects/VirginMoneyDeveloperChallenge/app/src/main/res/layout/fragment_gallery.xml" value="0.42552083333333335" />
         <entry key="..\:/Users/Samuel/AndroidStudioProjects/VirginMoneyDeveloperChallenge/app/src/main/res/layout/fragment_home.xml" value="0.42135416666666664" />
         <entry key="..\:/Users/Samuel/AndroidStudioProjects/VirginMoneyDeveloperChallenge/app/src/main/res/layout/fragment_notifications.xml" value="0.42135416666666664" />
         <entry key="..\:/Users/Samuel/AndroidStudioProjects/VirginMoneyDeveloperChallenge/app/src/main/res/layout/fragment_people.xml" value="0.22864583333333333" />
         <entry key="..\:/Users/Samuel/AndroidStudioProjects/VirginMoneyDeveloperChallenge/app/src/main/res/layout/fragment_rooms.xml" value="0.42135416666666664" />
         <entry key="..\:/Users/Samuel/AndroidStudioProjects/VirginMoneyDeveloperChallenge/app/src/main/res/layout/joke_cardrow_view.xml" value="0.42135416666666664" />
-        <entry key="..\:/Users/Samuel/AndroidStudioProjects/VirginMoneyDeveloperChallenge/app/src/main/res/layout/people_row_view.xml" value="0.1" />
-        <entry key="..\:/Users/Samuel/AndroidStudioProjects/VirginMoneyDeveloperChallenge/app/src/main/res/layout/room_row_view.xml" value="0.1" />
+        <entry key="..\:/Users/Samuel/AndroidStudioProjects/VirginMoneyDeveloperChallenge/app/src/main/res/layout/nav_header_main.xml" value="0.42552083333333335" />
+        <entry key="..\:/Users/Samuel/AndroidStudioProjects/VirginMoneyDeveloperChallenge/app/src/main/res/layout/people_row_view.xml" value="0.165" />
+        <entry key="..\:/Users/Samuel/AndroidStudioProjects/VirginMoneyDeveloperChallenge/app/src/main/res/layout/room_row_view.xml" value="0.335" />
+        <entry key="..\:/Users/Samuel/AndroidStudioProjects/VirginMoneyDeveloperChallenge/app/src/main/res/menu/activity2.xml" value="0.42552083333333335" />
+        <entry key="..\:/Users/Samuel/AndroidStudioProjects/VirginMoneyDeveloperChallenge/app/src/main/res/menu/activity2_drawer.xml" value="0.4114583333333333" />
+        <entry key="..\:/Users/Samuel/AndroidStudioProjects/VirginMoneyDeveloperChallenge/app/src/main/res/menu/activity_drawer.xml" value="0.34829931972789113" />
         <entry key="..\:/Users/Samuel/AndroidStudioProjects/VirginMoneyDeveloperChallenge/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3271889400921659" />
       </map>
     </option>

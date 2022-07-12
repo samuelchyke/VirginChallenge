@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.itc.virginmoneydeveloperchallenge.databinding.RoomRowViewBinding
 import com.itc.virginmoneydeveloperchallenge.model.rooms.RoomsResponseItem
-import com.itc.virginmoneydeveloperchallenge.util.DateUtils.stringToDate
 
 class RoomAdapter(
     private val mRoomsList: MutableList<RoomsResponseItem> = mutableListOf()
