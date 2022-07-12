@@ -1,9 +1,7 @@
 package com.itc.virginmoneydeveloperchallenge.ui.viewmodel
 
-import android.graphics.ColorSpace
-import android.view.Display
+
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import androidx.lifecycle.MutableLiveData
 import com.google.common.truth.Truth.assertThat
 import com.itc.virginmoneydeveloperchallenge.MainCoroutineRule
 import com.itc.virginmoneydeveloperchallenge.model.rooms.RoomsResponse
@@ -11,7 +9,7 @@ import com.itc.virginmoneydeveloperchallenge.model.rooms.RoomsResponseItem
 import com.itc.virginmoneydeveloperchallenge.repository.VirginRepository
 import com.itc.virginmoneydeveloperchallenge.util.UIState
 import io.mockk.clearAllMocks
-import junit.framework.Assert.assertEquals
+import org.junit.Assert.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.*
@@ -21,11 +19,9 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
-import org.mockito.Mockito.`when`
 import org.mockito.MockitoAnnotations
 import org.mockito.junit.MockitoJUnitRunner
 import retrofit2.Response
-import kotlin.math.E
 
 @RunWith(MockitoJUnitRunner::class)
 @ExperimentalCoroutinesApi
@@ -42,7 +38,7 @@ class VirginViewModelTest {
 
     @Mock
     lateinit var mockRepo: VirginRepository
-    lateinit var virginViewModel: VirginViewModel
+    private lateinit var virginViewModel: VirginViewModel
     lateinit var dummyResponse : Response<RoomsResponse>
 
     @Before
@@ -50,7 +46,7 @@ class VirginViewModelTest {
         MockitoAnnotations.initMocks(this)
         Dispatchers.setMain(testIoDispatcher)
         virginViewModel = VirginViewModel(mockRepo)
-//        dummyResponse.body()?.add(model())
+
     }
 
     @After
@@ -64,8 +60,10 @@ class VirginViewModelTest {
 
             // Assign
             val expectedOutcome = UIState.LOADING
+//            dummyResponse.body()?.add(model())
 
-//            `when`(mockRepo.getRooms()).thenReturn(dummyResponse)
+            // Assert
+//            `when`(mockRepo.getRooms()).thenReturn()
             mockRepo.getRooms()
 
             // Action
@@ -95,14 +93,16 @@ class VirginViewModelTest {
 //        val value = virginViewModel.rooms.value?.let { UIState.SUCCESS(it) }
         val expectedOutcome = UIState.SUCCESS(this)
 
+        mode(dummyResponse)
+
 //            .apply { UIState.SUCCESS(room)  }
 
-        mockRepo.getRooms()
+            mockRepo.getRooms()
 
             // Assign
             virginViewModel.rooms.observeForever {
                 assertThat(it).isNotNull()
-                assertThat(it).isEqualTo(expectedOutcome)
+                assertThat(expectedOutcome).isEqualTo(mode(dummyResponse))
             }
 
 //            `when`(mockRepo.getRooms()).thenReturn(dummyResponse)
@@ -114,9 +114,10 @@ class VirginViewModelTest {
     }
 
 //
-//        fun mode(): Response<RoomsResponse>{
-//            return mode()
-//        }
+        fun mode(model: Response<RoomsResponse>): Response<RoomsResponse> {
+            model.body()?.add(model())
+            return model
+        }
 
         private fun model(): RoomsResponseItem =
             RoomsResponseItem(

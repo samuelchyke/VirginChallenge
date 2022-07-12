@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.RoomFragment">
+    tools:context=".ui.fragment.RoomFragment"
+    android:paddingTop="?actionBarSize">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:paddingTop="10dp"
         android:paddingBottom="15dp"
         android:id="@+id/room_recVw"
         android:layout_width="match_parent"
