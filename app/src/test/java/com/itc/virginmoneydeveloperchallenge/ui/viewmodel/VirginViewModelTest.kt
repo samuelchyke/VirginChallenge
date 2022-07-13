@@ -39,7 +39,7 @@ class VirginViewModelTest {
     @Mock
     lateinit var mockRepo: VirginRepository
     private lateinit var virginViewModel: VirginViewModel
-    lateinit var dummyResponse : Response<RoomsResponse>
+    lateinit var dummyResponse: Response<RoomsResponse>
 
     @Before
     fun setUp() {
@@ -56,79 +56,19 @@ class VirginViewModelTest {
     }
 
     @Test
-    fun `room is set to LOADING before data is retrieved`() = runTest {
+    fun `room default val is set to LOADING before data is retrieved return true`() = runTest {
 
-            // Assign
-            val expectedOutcome = UIState.LOADING
-//            dummyResponse.body()?.add(model())
+        val expectedOutcome = UIState.LOADING
 
-            // Assert
-//            `when`(mockRepo.getRooms()).thenReturn()
-            mockRepo.getRooms()
+        mockRepo.getRooms()
 
-            // Action
-            virginViewModel.rooms.observeForever {
-                assertThat(it).isNotNull()
-                assertThat(it).isEqualTo(expectedOutcome)
-            }
-
-//            `when`(mockRepo.getRooms()).thenReturn(dummyResponse)
-
-//         Action when
-//            virginViewModel.getRooms()
-
+        virginViewModel.rooms.observeForever {
+            assertThat(it).isNotNull()
+            assertThat(it).isEqualTo(expectedOutcome)
         }
 
-
-
-//
-//        //
-//        assertEquals("", model())
-
-//
-    @Test
-    fun `room when room is retrieved not null should return a response `() = runTest {
-
-
-//        val value = virginViewModel.rooms.value?.let { UIState.SUCCESS(it) }
-        val expectedOutcome = UIState.SUCCESS(this)
-
-        mode(dummyResponse)
-
-//            .apply { UIState.SUCCESS(room)  }
-
-            mockRepo.getRooms()
-
-            // Assign
-            virginViewModel.rooms.observeForever {
-                assertThat(it).isNotNull()
-                assertThat(expectedOutcome).isEqualTo(mode(dummyResponse))
-            }
-
-//            `when`(mockRepo.getRooms()).thenReturn(dummyResponse)
-
-//         Action when
-//            virginViewModel.getRooms()
-
-        }
     }
 
-//
-        fun mode(model: Response<RoomsResponse>): Response<RoomsResponse> {
-            model.body()?.add(model())
-            return model
-        }
 
-        private fun model(): RoomsResponseItem =
-            RoomsResponseItem(
-                "12:00:00",
-                "1",
-                true,
-                2
-            )
-
-
-
-
-
+}
 
